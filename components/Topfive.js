@@ -7,7 +7,7 @@ import godBackground from "../public/Miss Misery Nike.jpeg";
 function Topfive({ players, session, handleLoading }) {
   const [detailed, setDetailed] = useState();
   console.log(session);
-  useEffect(async () => {
+  useEffect(() => {
     handleLoading(true);
     let tempDetail = [];
     const getDetails = async () => {
@@ -23,7 +23,7 @@ function Topfive({ players, session, handleLoading }) {
         tempDetail.push(result.data[0]);
       }
     };
-    await getDetails();
+    getDetails();
     setDetailed(tempDetail);
     handleLoading(false);
   }, []);
