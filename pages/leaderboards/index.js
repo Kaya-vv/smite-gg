@@ -11,7 +11,6 @@ export async function getServerSideProps({ req, res }) {
   cookie.set("session", session);
   const playerArray = await getPlayers(session);
   const topFive = await getTopFive(playerArray, session);
-  console.log(topFive);
 
   return {
     props: {

@@ -31,7 +31,6 @@ function Leaderboard({ playerArray, session, topFive }) {
     }
     return 1;
   });
-  //const topFive = sortedPlayers.slice(0, 5);
 
   const currentPlayers = sortedPlayers.slice(indexofFirstPost, indexOfLastPost);
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
