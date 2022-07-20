@@ -6,8 +6,7 @@ import Ranking from "./Ranking";
 import Pagination from "./Pagination";
 import Cookies from "universal-cookie";
 import Topfive from "./Topfive";
-function Leaderboard({ playerArray, session }) {
-  console.log(session);
+function Leaderboard({ playerArray, session, topFive }) {
   const [players, setPlayers] = useState(playerArray);
   const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
@@ -32,7 +31,7 @@ function Leaderboard({ playerArray, session }) {
     }
     return 1;
   });
-  const topFive = sortedPlayers.slice(0, 5);
+  //const topFive = sortedPlayers.slice(0, 5);
 
   const currentPlayers = sortedPlayers.slice(indexofFirstPost, indexOfLastPost);
   const paginate = (pageNumber) => setCurrentPage(pageNumber);

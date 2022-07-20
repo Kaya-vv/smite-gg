@@ -4,7 +4,7 @@ import React from "react";
 function Header() {
   return (
     <header className="flex text-xl fixed top-0 w-full h-[60px] text-white justify-between items-center box-content">
-      <Link href="/">
+      <Link href="/leaderboards">
         <div className="w-[180px] h-[60px] border-r-2 border-[#2c2c40]">
           <img
             alt=""

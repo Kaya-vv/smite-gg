@@ -1,39 +1,19 @@
 import Cookies from "universal-cookie";
 import React, { useEffect, useState } from "react";
-import axios from "../pages/api/axios";
+import axios from "axios";
 import { getFetchUrl } from "../pages/api/requests";
 import godBackground from "../public/Miss Misery Nike.jpeg";
 
 function Topfive({ players, session, handleLoading }) {
   const [detailed, setDetailed] = useState();
   console.log(session);
-  useEffect(() => {
-    handleLoading(true);
-    let tempDetail = [];
-    const getDetails = async () => {
-      for (const i = 0; i < players.length; i++) {
-        const request = getFetchUrl(
-          "getplayer",
-          session,
-          null,
-          players[i]?.player_id
-        );
-        const result = await axios.get(request);
-
-        tempDetail.push(result.data[0]);
-      }
-    };
-    getDetails();
-    setDetailed(tempDetail);
-    handleLoading(false);
-  }, []);
 
   return (
     <div
       id="leaderboard_top-five"
       className="grid grid-flow-col grid-cols-4 gap-3 mb-3 text-sm font-semibold"
     >
-      {detailed?.map((player, id) => (
+      {players?.map((player, id) => (
         <div
           key={player.Id}
           id="top-five"
